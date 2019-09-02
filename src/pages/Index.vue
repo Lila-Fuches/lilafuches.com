@@ -103,7 +103,7 @@
           </div>
 
           <p class="mb-12">
-            Fancy a chat? Get in touch with the form below, or book a free 30 minute consolutation online using <a href="https://calendly.com/lilafuches">this link</a>
+            Fancy a chat? Get in touch with the form below, or book a free 30 minute consultation online using <a href="https://calendly.com/lilafuches">this link</a>
           </p>
 
           <div class="text-lg sm:text-lg mb-16">
