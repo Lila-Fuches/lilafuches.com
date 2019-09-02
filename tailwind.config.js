@@ -61,6 +61,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Poppins',
         'Nunito Sans',
         'Roboto',
         '-apple-system',
