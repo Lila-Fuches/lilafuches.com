@@ -193,7 +193,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Home'
+    title: 'Welcome'
   }
 }
 </script>
