@@ -17,16 +17,6 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(VueFuse)
 
   head.meta.push({
-    name: 'keywords',
-    content: 'Gridsome,Vue,Tailwind,Tailwind CSS,JavaScript,HTML,CSS,Vue.js,VueJS'
-  })
-
-  head.meta.push({
-    name: 'description',
-    content: 'Software for any business, we help companies turn great ideas into awesome products'
-  })
-
-  head.meta.push({
     name: 'author',
     content: 'Lila Fuches'
   })
@@ -34,6 +24,27 @@ export default function (Vue, { router, head, isClient }) {
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Poppins&display=swap'
+  })
+
+  head.meta.push({
+    key: 'og:description',
+    name: 'og:description',
+    content: `Software for any business, we help companies turn great ideas into awesome products`,
+  })
+
+  head.meta.push({
+    key: 'twitter:description',
+    name: 'twitter:description',
+    content: `Software for any business, we help companies turn great ideas into awesome products`,
+  })
+
+  router.beforeEach((to, _from, next) => {
+    head.meta.push({
+      key: 'og:url',
+      name: 'og:url',
+      content: process.env.GRIDSOME_BASE_PATH + to.path,
+    })
+    next()
   })
 }
 

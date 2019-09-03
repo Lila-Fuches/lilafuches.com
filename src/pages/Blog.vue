@@ -65,7 +65,19 @@ import PaginationPosts from '../components/PaginationPosts'
 
 export default {
   metaInfo: {
-    title: 'Blog'
+    title: 'Blog Posts',
+    meta: [
+      {
+        key: 'og:title',
+        name: 'og:title',
+        content: 'Lila Fuches - blog',
+      },
+      {
+        key: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Lila Fuches - blog',
+      },
+    ]
   },
   components: {
     PaginationPosts
