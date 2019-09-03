@@ -37,15 +37,6 @@ export default function (Vue, { router, head, isClient }) {
     name: 'twitter:description',
     content: `Software for any business, we help companies turn great ideas into awesome products`,
   })
-
-  router.beforeEach((to, _from, next) => {
-    head.meta.push({
-      key: 'og:url',
-      name: 'og:url',
-      content: process.env.GRIDSOME_BASE_PATH + to.path,
-    })
-    next()
-  })
 }
 
 
