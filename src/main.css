@@ -114,3 +114,7 @@ nav .active {
   height: 100%;
   border: 0;
 }
+
+.markdown-body img {
+  @apply h-64 w-auto mx-auto;
+}

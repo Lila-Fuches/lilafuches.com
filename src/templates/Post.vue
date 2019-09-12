@@ -60,6 +60,10 @@ export default {
 <style>
   /* Modified version of: https://github.com/sindresorhus/github-markdown-css */
 
+  .markdown-body em {
+    font-weight: 700;
+  }
+
   .markdown-body .octicon {
     display: inline-block;
     fill: currentColor;
@@ -300,6 +304,7 @@ export default {
 
   .markdown-body * {
     box-sizing: border-box;
+    font-weight: 400;
   }
 
   .markdown-body input {
@@ -719,7 +724,6 @@ export default {
   }
 
   .markdown-body img {
-    background-color: #fff;
     box-sizing: content-box;
     max-width: 100%;
   }
