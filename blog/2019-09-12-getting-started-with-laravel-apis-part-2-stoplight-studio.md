@@ -3,25 +3,25 @@ title: "Getting started with Laravel APIs Part 2: Stoplight Studio"
 path: getting-started-with-laravel-apis-part-2-stoplight-studio
 date: 2019-09-12
 summary: Designing an API can be easy, as long as you approach it in a logical way and take each part separately, so you do not over complicate the process.
-tags: ['laravel', 'api', 'tutorial', 'stoplight studio', 'openapi']
+tags: ['laravel', 'api', 'tutorial', 'stoplight studio']
 ---
 
 ![stoplight studio logo](./images/mark_light_bg.png)
 
-Designing an API _can_ be easy, as long as you approach it in a logical way and take each part separately, so you do not over complicate the process. For this article I am going to take a theoretical API and walk through how I would design it.
+Designing an API _can_ be easy. As long as you approach it in a logical way, and take each part separately, so you do not over complicate the process. For this article I am going to take a theoretical API and walk through how I would design it.
 
 
 ### What we are building?
 
 ![building blocks](./images/building.svg)
 
-In this series we will be building a **Training Log API**, what is this? A training log is a simple referencing platform which allows individuals or organisations to make a log of what training has been completed as well as marking attendance for training courses.
+In this series we will be building a **Training Log API**, what is this? A training log is a simple referencing platform which allows individuals, or organisations, to make a log of what training has been completed as well as marking attendance for training courses.
 
 Possibly one of the first steps for anyone creating an API is figuring out some sort of business logic, what will this system do extactly. These can theen be broken down into user stories/epics/features and go through some level of project management flow to create what will become our sprints.
 
 ### Lets figure out what we need
 
-As this is a tutorial, I will not be going completely indepth with what this system will do - it will be a trimmed down API to demonstrate a process. We can break down our requirmeents in a simple list at this stage, I like to think in a behavioural way at this stage:
+As this is a tutorial, I will not be going completely indepth with what this system will do - it will be a trimmed down API to demonstrate a process. We can break down our requirmeents in a simple list at this stage. I like to think in a behavioural way at this stage:
 
 
 - As a user, I must be able to login and register
@@ -31,7 +31,7 @@ As this is a tutorial, I will not be going completely indepth with what this sys
 - As a user, I must be able to see my progress on a course and my completed courses
 
 
-These are some pretty basic requirements for our training log API, however even these simple requiremnts will give us a good insight into how we should approach designing our API.
+These are some pretty basic requirements for our training log API. However, even these simple requiremnts will give us a good insight into how we should approach designing our API.
 
 
 ### Enter Stoplight Studio - API Designer, friend, useful tool
@@ -55,7 +55,7 @@ properties:
 
 For this style system a User is always one of the first things that I build, for the purpose of saving reading space I am ommiting none crucial fields from the models.
 
-One we have an entity that is able to access our system we can now start to define the connecting models which will in turn define what our API can do.
+One we have an entity that is able to access our system we can start to define the connecting models which will in turn define what our API can do.
 
 
 ### Breaking down our requirements
@@ -75,7 +75,7 @@ A User needs to be able to see available courses. So we will need a Course model
 
 #### As a user, I must be able to enrol on a course
 
-So we have a User and we have Courses, now we need to enrol on them. The easiest option here would be to create a many to many relationship through a pivit table in Laravel it would look like:
+So we have a User and we have Courses. Now we need to enrol on them. The easiest option here would be to create a many to many relationship through a pivit table in Laravel it would look like:
 
 ```php
 <?php
@@ -97,7 +97,7 @@ class Course extends Model
 }
 ```
 
-This however, is not what I am going to do. For this I will create a new model called Enrolment which will capture both User and Course but will give us more extensibility than a standard pivot relation.
+This, however, is not what I am going to do. For this I will create a new model called Enrolment which will capture both User and Course but will give us more extensibility than a standard pivot relation.
 
 
 #### As a user, I must be able to attend training sessions as part of a course
@@ -111,7 +111,7 @@ To mark attendance, a simple pivot relation will suffice here for now. I do not 
 
 So *Users* want to *Enrol* onto a *Course*, which will be tagged with *Topics*, which will allow them to *Attend* the many *Sections* and see progress along the way.
 
-When you look at the feature requirements and the outputted list, there are othre araes wheree improvements could be added - however it is easy to get carried away with yourself and over engineer an API at this point.
+When you look at the feature requirements and the outputted list, there are other areas where improvements could be added - however it is easy to get carried away with yourself and over engineer an API at this point.
 
 
 #### So, Stoplight Studio - putting the piecse together
