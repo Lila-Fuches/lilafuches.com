@@ -174,9 +174,9 @@ properties:
     type: integer
   uuid:
     type: string
-  user_id:
+  user:
     $ref: ./user.v1.yaml
-  course_id:
+  course:
     $ref: ./course.v1.yaml
 ```
 
@@ -197,7 +197,7 @@ properties:
     type: integer
   uuid:
     type: string
-  course_id:
+  course:
     $ref: ./course.v1.yaml
   order:
     type: integer
