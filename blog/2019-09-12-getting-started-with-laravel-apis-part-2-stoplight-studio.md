@@ -21,7 +21,7 @@ Possibly one of the first steps for anyone creating an API is figuring out some 
 
 ### Lets figure out what we need
 
-As this is a tutorial, I will not be going completely indepth with what this system will do - it will be a trimmed down API to demonstrate a process. We can break down our requirmeents in a simple list at this stage. I like to think in a behavioural way at this stage:
+As this is a tutorial, I will not be going completely indepth with what this system will do - it will be a trimmed down API to demonstrate a process. We can break down our requirements in a simple list at this stage. I like to think in a behavioural way at this stage:
 
 
 - As a user, I must be able to login and register
@@ -31,7 +31,7 @@ As this is a tutorial, I will not be going completely indepth with what this sys
 - As a user, I must be able to see my progress on a course and my completed courses
 
 
-These are some pretty basic requirements for our training log API. However, even these simple requiremnts will give us a good insight into how we should approach designing our API.
+These are some pretty basic requirements for our training log API. However, even these simple requirements will give us a good insight into how we should approach designing our API.
 
 
 ### Enter Stoplight Studio - API Designer, friend, useful tool
