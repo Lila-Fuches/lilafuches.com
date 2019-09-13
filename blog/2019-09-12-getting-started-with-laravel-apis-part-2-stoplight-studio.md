@@ -75,7 +75,7 @@ A User needs to be able to see available courses. So we will need a Course model
 
 #### As a user, I must be able to enrol on a course
 
-So we have a User and we have Courses. Now we need to enrol on them. The easiest option here would be to create a many to many relationship through a pivit table in Laravel it would look like:
+So we have a User and we have Courses. Now we need to enrol on them. The easiest option here would be to create a many to many relationship through a pivot table in Laravel it would look like:
 
 ```php
 <?php
