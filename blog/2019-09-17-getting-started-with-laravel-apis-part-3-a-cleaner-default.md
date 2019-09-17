@@ -141,7 +141,7 @@ So ensure you move namespace over to `namespace App\Domains\User\Models` within 
 
 We have now moved our default `User` Model over, it is now time to flesh out how we want some interaction to work.
 
-One of the most common things I find people failing with in Laravel when it comes to scaling, is that they start having to replicate business logic. Their controllers end up holding all of the logic, making it difficult to expand upon. For quite awhile now I have been using simple classes which I can use to encapsulate this business logic, and action it from any interfacee be that Http or command line. This is something that is getting a little more popular now thanks to other people also following this pattrn. These are classes that are actionable, similar to Laravel Jobs that can be dispatched. Here is an example one below:
+One of the most common things I find people failing with in Laravel when it comes to scaling, is that they start having to replicate business logic. Their controllers end up holding all of the logic, making it difficult to expand upon. For quite awhile now I have been using simple classes which I can use to encapsulate this business logic, and action it from any interface be that Http or command line. This is something that is getting a little more popular now thanks to other people also following this pattrn. These are classes that are actionable, similar to Laravel Jobs that can be dispatched. Here is an example one below:
 
 ```php
 <?php
