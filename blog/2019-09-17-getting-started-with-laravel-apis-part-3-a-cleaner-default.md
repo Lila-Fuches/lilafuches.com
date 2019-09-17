@@ -8,15 +8,15 @@ tags: ['laravel', 'api', 'tutorial']
 
 ![laravel logo](./images/laravel-logo.png)
 
-The default installation of Laravel is aimed at a typical web application, which is a great entry for most people - however, when building an API things need to be changed slightly.
+The default installation of Laravel is aimed at a typical web application, which is a great entry for most people. However, when building an API things need to be changed slightly.
 
 The directory structure for Laravel is pretty easy to understand, and is setup for you to get going pretty quickly. The main problem I have found is that when you application grows the directory structure starts to get difficult to navigate and you end up with brain overload trying to find things without a good IDE.
 
 ## Operation Cleanup
 
-Some people prefer to use Lumen when it comes to building APIs however, I am not one of them. Lumen is a very trimmed down verion of Laravel with a different target - no make generators by default etc etc. We use Laravel because it is fast to get something working and the fluent syntax makes things easy to understand as we go.
+Some people prefer to use Lumen when it comes to building APIs. However, I am not one of them. Lumen is a very trimmed down version of Laravel with a different target - no make generators by default etc etc. We use Laravel because it is fast to get something working and the fluent syntax makes things easy to understand as we go.
 
-Creating a cleaner default isn't too difficult, but you have to make sure you are methodical about how you approach it. It is easy to forget something, so you want to make sure you go front to back. I start with where our users would enter our application: `Routing`. The first step is to remove that `routes/web.php` file as it is not going to be needed. This will however, break a few of things.
+Creating a cleaner default isn't too difficult, but you have to make sure you are methodical about how you approach it. It is easy to forget something, so you want to make sure you go front to back. I start with where our users would enter our application: `Routing`. The first step is to remove that `routes/web.php` file as it is not going to be needed. This will, however, break a few of things.
 
 This is our first real refactor now, we need to refactor the `app/Providers/RouteServiceProvider.php` file and remove the loading of web routes. I typically do this in a particular way, I remove the calling of the `mapWebRoutes()` function and rename the api loading function like the below:
 
@@ -37,7 +37,7 @@ protected function mapApiV1Routes()
 }
 ```
 
-As you can see a few things have changed. We are now mapping only the API V1 routes, which we prefix straight away with `v1`, we no longer have web routese so we do not need the `api` prefix. We then need to add version namespacing to these routes, to allow us to migrate users between versions, and we also move the `routes/api.php` file into a versioned approach also, so ensure to remove `routes/api.php`.
+As you can see a few things have changed. We are now mapping only the API V1 routes, which we prefix straight away with `v1`, we no longer have web routes so we do not need the `api` prefix. We then need to add version namespacing to these routes, to allow us to migrate users between versions, and we also move the `routes/api.php` file into a versioned approach also, so ensure to remove `routes/api.php`.
 
 This is the first step I do with *any* Laravel API, it allows us to clean how we organise routing as well as add in some versioning. Ensure you create a `routes/api/v1.php` file and add the following:
 
