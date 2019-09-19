@@ -182,7 +182,7 @@ class StoreController
     {
         // any authorisation
 
-        $user = $this->action->handle($request->all());
+        $user = $this->action->handle($request->validated());
 
         // return here
     }
